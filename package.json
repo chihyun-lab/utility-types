@@ -1,0 +1,33 @@
+{
+  "name": "advanced-ts-utility-types",
+  "version": "1.0.0",
+  "description": "Advanced TypeScript utility types for practical use",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "clean": "rimraf dist",
+    "prepublishOnly": "npm run clean && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "typescript",
+    "utility-types",
+    "types",
+    "generics",
+    "advanced"
+  ],
+  "author": "",
+  "license": "MIT",
+  "type": "commonjs",
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
+  "devDependencies": {
+    "@types/node": "^24.2.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.9.2"
+  }
+}

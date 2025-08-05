@@ -1,0 +1,47 @@
+// Array utility types
+
+// Get array element type
+export type ArrayElement<ArrayType extends readonly unknown[]> = ArrayType extends readonly (infer ElementType)[]
+  ? ElementType
+  : never;
+
+// Non-empty array
+export type NonEmptyArray<T> = [T, ...T[]];
+
+// Head of array
+export type Head<T extends readonly any[]> = T extends readonly [infer H, ...any[]] ? H : never;
+
+// Tail of array
+export type Tail<T extends readonly any[]> = T extends readonly [any, ...infer Rest] ? Rest : [];
+
+// Last element of array
+export type Last<T extends readonly any[]> = T extends readonly [...any[], infer L] ? L : never;
+
+// Length of tuple
+export type Length<T extends readonly any[]> = T['length'];
+
+// Reverse array
+export type Reverse<T extends readonly any[]> = T extends readonly [...infer Rest, infer Last]
+  ? [Last, ...Reverse<Rest>]
+  : [];
+
+// Flatten array
+export type FlattenArray<T extends readonly any[]> = T extends readonly [infer First, ...infer Rest]
+  ? First extends readonly any[]
+    ? [...FlattenArray<First>, ...FlattenArray<Rest>]
+    : [First, ...FlattenArray<Rest>]
+  : [];
+
+// Zip two arrays
+export type Zip<T extends readonly any[], U extends readonly any[]> = T extends readonly [infer T1, ...infer TRest]
+  ? U extends readonly [infer U1, ...infer URest]
+    ? [[T1, U1], ...Zip<TRest, URest>]
+    : []
+  : [];
+
+// Includes type in array
+export type Includes<T extends readonly any[], U> = T extends readonly [infer First, ...infer Rest]
+  ? First extends U
+    ? true
+    : Includes<Rest, U>
+  : false;
