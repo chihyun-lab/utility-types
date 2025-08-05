@@ -1,6 +1,6 @@
 {
   "name": "advanced-ts-utility-types",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Advanced TypeScript utility types for practical use",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
