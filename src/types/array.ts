@@ -1,20 +1,54 @@
-// Array utility types
+/**
+ * Array utility types
+ * Provides advanced type-level operations for arrays and tuples
+ */
 
-// Get array element type
+/**
+ * Extract the element type from an array type
+ * @template ArrayType - The array type to extract from
+ * @example
+ * type StringArray = string[]
+ * type Element = ArrayElement<StringArray> // string
+ */
 export type ArrayElement<ArrayType extends readonly unknown[]> = ArrayType extends readonly (infer ElementType)[]
   ? ElementType
   : never;
 
-// Non-empty array
+/**
+ * Array type that ensures at least one element
+ * @template T - The element type
+ * @example
+ * function process(items: NonEmptyArray<string>) {
+ *   const first = items[0] // guaranteed to exist
+ * }
+ */
 export type NonEmptyArray<T> = [T, ...T[]];
 
-// Head of array
+/**
+ * Extract the first element type from a tuple
+ * @template T - The tuple type
+ * @example
+ * type Colors = ['red', 'green', 'blue']
+ * type FirstColor = Head<Colors> // 'red'
+ */
 export type Head<T extends readonly any[]> = T extends readonly [infer H, ...any[]] ? H : never;
 
-// Tail of array
+/**
+ * Extract all elements except the first from a tuple
+ * @template T - The tuple type
+ * @example
+ * type Colors = ['red', 'green', 'blue']
+ * type RestColors = Tail<Colors> // ['green', 'blue']
+ */
 export type Tail<T extends readonly any[]> = T extends readonly [any, ...infer Rest] ? Rest : [];
 
-// Last element of array
+/**
+ * Extract the last element type from a tuple
+ * @template T - The tuple type
+ * @example
+ * type Colors = ['red', 'green', 'blue']
+ * type LastColor = Last<Colors> // 'blue'
+ */
 export type Last<T extends readonly any[]> = T extends readonly [...any[], infer L] ? L : never;
 
 // Length of tuple
