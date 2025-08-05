@@ -1,5 +1,7 @@
 {
   "name": "advanced-ts-utility-types",
+  "author": "chihyun-lab",
+  "homepage": "https://github.com/chihyun-lab/utility-types",
   "version": "1.0.2",
   "description": "Advanced TypeScript utility types for practical use",
   "main": "dist/index.js",
@@ -18,7 +20,13 @@
     "generics",
     "advanced"
   ],
-  "author": "",
+  "bugs": {
+    "url": "https://github.com/chihyun-lab/utility-types/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chihyun-lab/utility-types.git"
+  },
   "license": "MIT",
   "type": "commonjs",
   "files": [
