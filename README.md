@@ -5,7 +5,7 @@ A comprehensive collection of advanced TypeScript utility types for practical de
 ## Installation
 
 ```bash
-npm install utility-types
+npm install npm i advanced-ts-utility-types
 ```
 
 ## Usage
