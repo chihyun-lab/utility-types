@@ -27,7 +27,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/chihyun-lab/advanced-ts-utility-types.git"
+    "url": "git+https://github.com/chihyun-lab/advanced-ts-utility-types.git"
   },
   "license": "MIT",
   "type": "commonjs",
