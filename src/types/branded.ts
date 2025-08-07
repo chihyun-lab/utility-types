@@ -24,12 +24,12 @@ export const createEmail = (email: string): Email => {
   return email as Email;
 };
 export const createURL = (url: string): URL => {
-  try {
-    new URL(url);
-    return url as URL;
-  } catch {
+  // Validate URL format using regex
+  const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+  if (!urlPattern.test(url)) {
     throw new Error('Invalid URL format');
   }
+  return url as URL;
 };
 
 // Extract brand from branded type
