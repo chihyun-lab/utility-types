@@ -12,8 +12,11 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
-    "noEmitOnError": true
+    "noEmitOnError": true,
+    "importHelpers": true,
+    "removeComments": true,
+    "stripInternal": true
   },
-  "include": ["src/**/*", "tests/**/*"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }

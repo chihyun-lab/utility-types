@@ -9,6 +9,7 @@ module.exports = {
         target: "ES2020",
         module: "CommonJS",
         lib: ["ES2020"],
+        types: ["jest"],
         strict: true,
         esModuleInterop: true,
         skipLibCheck: true,
